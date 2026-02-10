@@ -1,0 +1,55 @@
+.workout-exercise-card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-title {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+.btn-options {
+    color: var(--color-text-muted);
+    padding: 4px;
+}
+
+.sets-header {
+    display: grid;
+    grid-template-columns: 24px 1fr 1fr 40px;
+    gap: var(--spacing-sm);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.btn-add-set {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    background-color: var(--color-surface-hover);
+    color: var(--color-text);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    transition: background-color 0.2s;
+}
+
+.btn-add-set:hover {
+    background-color: var(--color-border);
+}

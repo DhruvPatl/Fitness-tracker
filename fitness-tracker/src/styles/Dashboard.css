@@ -1,0 +1,31 @@
+.dashboard .page-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.dashboard .page-header h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+.dashboard .welcome-text {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-md);
+}
+
+/* Animation for page load */
+.page {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

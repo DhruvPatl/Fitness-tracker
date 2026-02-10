@@ -1,0 +1,67 @@
+.set-row-container {
+    display: grid;
+    grid-template-columns: 24px 1fr 1fr 40px;
+    gap: var(--spacing-sm);
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    padding: 4px 0;
+    transition: opacity 0.2s;
+}
+
+.set-row-container.completed {
+    opacity: 0.6;
+}
+
+.set-number {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-align: center;
+}
+
+.set-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.set-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+    padding: 4px;
+    text-align: center;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+}
+
+.set-input:focus {
+    border-bottom-color: var(--color-primary);
+    ring: none;
+}
+
+.unit-label {
+    position: absolute;
+    right: 0;
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    pointer-events: none;
+}
+
+.btn-check {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-hover);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-check.active {
+    background-color: var(--color-success);
+    color: white;
+}

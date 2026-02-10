@@ -1,0 +1,67 @@
+.active-workout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+    z-index: 10;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--color-surface);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-family: monospace;
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+}
+
+.btn-finish {
+    background-color: var(--color-success);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+}
+
+.workout-content {
+    flex: 1;
+    padding-bottom: 80px;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.btn-add-exercise {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}

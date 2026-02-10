@@ -1,0 +1,32 @@
+.pr-card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.pr-list {
+    list-style: none;
+}
+
+.pr-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pr-item:last-child {
+    border-bottom: none;
+}
+
+.exercise-name {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+}
+
+.exercise-weight {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
