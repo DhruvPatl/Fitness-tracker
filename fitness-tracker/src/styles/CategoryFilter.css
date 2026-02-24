@@ -14,17 +14,20 @@
 }
 
 .category-chip {
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: 6px 16px;
     border-radius: var(--radius-full);
     background-color: var(--color-surface);
     color: var(--color-text-muted);
     border: 1px solid var(--color-border);
     white-space: nowrap;
     transition: all 0.2s;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
 }
 
 .category-chip.active {
     background-color: var(--color-primary);
-    color: white;
+    color: black;
     border-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary-glow);
 }

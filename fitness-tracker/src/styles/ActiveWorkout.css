@@ -4,64 +4,156 @@
     flex-direction: column;
 }
 
-.workout-header {
+.workout-view-header {
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.workout-title-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-sm) 0;
-    position: sticky;
-    top: 0;
-    background-color: var(--color-background);
-    z-index: 10;
 }
 
-.timer {
+.workout-id {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    background-color: var(--color-surface);
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--radius-full);
-    font-family: monospace;
-    font-size: var(--font-size-lg);
-    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
-.btn-finish {
-    background-color: var(--color-success);
-    color: white;
-    padding: var(--spacing-xs) var(--spacing-lg);
-    border-radius: var(--radius-full);
+.settings-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+}
+
+.rest-timer-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.timer-label {
+    font-size: 0.6rem;
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.timer-display {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.timer-display .time {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-bold);
+    font-family: monospace;
+}
+
+.timer-display .unit {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.timer-reset {
+    color: var(--color-text-muted);
+}
+
+.timer-play {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px var(--color-primary-glow);
 }
 
 .workout-content {
     flex: 1;
-    padding-bottom: 80px;
 }
 
-.empty-state {
-    text-align: center;
-    color: var(--color-text-muted);
+.active-workout-footer {
     margin-top: var(--spacing-xl);
-    padding: var(--spacing-xl);
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius-lg);
+    padding-bottom: 40px;
 }
 
-.btn-add-exercise {
+.workout-notes-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-label {
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.notes-input {
     width: 100%;
-    background-color: var(--color-primary);
-    color: white;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     padding: var(--spacing-md);
-    border-radius: var(--radius-lg);
+    color: var(--color-text);
+    height: 80px;
+    resize: none;
+    font-size: var(--font-size-sm);
+}
+
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.btn-next,
+.btn-finish-new {
+    flex: 1;
+    height: 48px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     font-weight: var(--font-weight-bold);
-    margin-top: var(--spacing-md);
-    box-shadow: var(--shadow-md);
+    font-size: 0.85rem;
+}
+
+.btn-next {
+    background-color: #1a1a1a;
+    border: 1px solid var(--color-border);
+    color: white;
+}
+
+.btn-finish-new {
+    background-color: var(--color-primary);
+    color: black;
+    box-shadow: 0 0 15px var(--color-primary-glow);
 }

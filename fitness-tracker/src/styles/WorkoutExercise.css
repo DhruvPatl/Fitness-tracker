@@ -1,55 +1,59 @@
-.workout-exercise-card {
-    background-color: var(--color-surface);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+.workout-exercise-container {
+    margin-bottom: var(--spacing-xl);
 }
 
-.exercise-header {
+.exercise-header-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: var(--spacing-md);
 }
 
-.exercise-title {
+.exercise-title-active {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: 2px;
+}
+
+.exercise-previous {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.exercise-progress {
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-bold);
     color: var(--color-primary);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-medium);
+    background-color: rgba(34, 197, 94, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
 }
 
-.btn-options {
-    color: var(--color-text-muted);
-    padding: 4px;
-}
-
-.sets-header {
-    display: grid;
-    grid-template-columns: 24px 1fr 1fr 40px;
+.sets-list-active {
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-sm);
-    color: var(--color-text-muted);
-    font-size: var(--font-size-xs);
-    text-transform: uppercase;
-    margin-bottom: var(--spacing-sm);
-    text-align: center;
+    margin-bottom: var(--spacing-md);
 }
 
-.btn-add-set {
+.btn-add-set-active {
     width: 100%;
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--color-border);
+    color: var(--color-text-muted);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
-    padding: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
-    background-color: var(--color-surface-hover);
-    color: var(--color-text);
-    border-radius: var(--radius-md);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 }
 
-.btn-add-set:hover {
-    background-color: var(--color-border);
+.btn-add-set-active:active {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border-style: solid;
 }

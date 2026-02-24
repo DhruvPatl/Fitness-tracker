@@ -4,41 +4,46 @@ import '../styles/SetRow.css';
 const SetRow = ({
     setIndex,
     set,
+    weightUnit,
     onUpdate,
     onToggleComplete,
     onRemove
 }) => {
     return (
-        <div className={`set-row-container ${set.completed ? 'completed' : ''}`}>
-            <div className="set-number">{setIndex + 1}</div>
-            <div className="set-input-group">
+        <div className={`active-set-row ${set.completed ? 'completed' : ''}`}>
+            <div className="set-badge">{setIndex + 1}</div>
+
+            <div className="input-field-group">
+                <span className="field-label">{weightUnit.toUpperCase()}</span>
                 <input
                     type="number"
-                    placeholder="kg"
                     value={set.weight}
                     onChange={(e) => onUpdate('weight', e.target.value)}
-                    className="set-input"
+                    className="active-set-input"
+                    placeholder="-"
                 />
-                <span className="unit-label">kg</span>
             </div>
-            <div className="set-input-group">
+
+            <div className="input-field-group">
+                <span className="field-label">REPS</span>
                 <input
                     type="tel"
-                    placeholder="reps"
                     value={set.reps}
                     onChange={(e) => onUpdate('reps', e.target.value)}
-                    className="set-input"
+                    className="active-set-input"
+                    placeholder="-"
                 />
-                <span className="unit-label">reps</span>
             </div>
+
             <button
-                className={`btn-check ${set.completed ? 'active' : ''}`}
+                className={`active-btn-check ${set.completed ? 'is-complete' : ''}`}
                 onClick={onToggleComplete}
             >
-                <Check size={18} />
+                {set.completed ? <Check size={18} /> : <Check size={18} strokeOpacity={0.2} />}
             </button>
         </div>
     );
 };
+
 
 export default SetRow;

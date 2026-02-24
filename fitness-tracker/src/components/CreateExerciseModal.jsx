@@ -7,11 +7,12 @@ const MUSCLE_GROUPS = ['Chest', 'Back', 'Legs', 'Shoulders', 'Arms', 'Core', 'Ca
 const CreateExerciseModal = ({ onClose, onSave }) => {
     const [name, setName] = useState('');
     const [muscle, setMuscle] = useState(MUSCLE_GROUPS[0]);
+    const [restTime, setRestTime] = useState(90);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (name.trim()) {
-            onSave(name, muscle);
+            onSave(name, muscle, restTime);
             onClose();
         }
     };
@@ -52,6 +53,17 @@ const CreateExerciseModal = ({ onClose, onSave }) => {
                             ))}
                         </select>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="rest">Default Rest (seconds)</label>
+                        <input
+                            type="number"
+                            id="rest"
+                            value={restTime}
+                            onChange={(e) => setRestTime(e.target.value)}
+                            placeholder="e.g., 90"
+                            required
+                        />
+                    </div>
                     <div className="modal-actions">
                         <button type="button" onClick={onClose} className="btn-cancel">
                             Cancel
@@ -65,5 +77,6 @@ const CreateExerciseModal = ({ onClose, onSave }) => {
         </div>
     );
 };
+
 
 export default CreateExerciseModal;

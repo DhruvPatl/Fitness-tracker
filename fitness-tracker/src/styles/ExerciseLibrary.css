@@ -1,47 +1,36 @@
-.exercise-list {
-    display: grid;
-    gap: var(--spacing-md);
+.exercise-library {
+    padding-bottom: 20px;
 }
 
-.exercise-item {
-    background-color: var(--color-surface);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-lg);
+.library-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--color-surface);
-    /* Invisible border for consistency */
-    transition: border-color 0.2s;
-    cursor: pointer;
+    margin-bottom: var(--spacing-lg);
 }
 
-.exercise-item:hover {
-    border-color: var(--color-primary);
+.library-header h2 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
 }
 
-.exercise-info h3 {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text);
-    margin-bottom: 2px;
-}
-
-.exercise-info p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-}
-
-.search-bar {
-    width: 100%;
-    padding: var(--spacing-md);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+.back-btn,
+.add-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     background-color: var(--color-surface);
     color: var(--color-text);
-    margin-bottom: var(--spacing-md);
-    padding-left: 48px;
-    /* Space for icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+}
+
+.add-btn {
+    background-color: var(--color-primary);
+    color: black;
+    border: none;
 }
 
 .search-container {
@@ -57,18 +46,117 @@
     color: var(--color-text-muted);
 }
 
-.fab-add {
-    position: fixed;
-    bottom: 80px;
-    right: var(--spacing-md);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-    color: white;
+.search-bar {
+    width: 100%;
+    padding: 12px 12px 12px 48px;
+    background-color: #121212;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+}
+
+.library-content {
+    display: flex;
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.exercise-groups {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.letter-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.group-letter {
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+}
+
+.group-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.exercise-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm);
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-lg);
-    z-index: 90;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.exercise-card:active {
+    background-color: var(--color-surface-hover);
+}
+
+.exercise-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.exercise-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exercise-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.exercise-name {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 2px;
+}
+
+.exercise-category {
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chevron {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}
+
+.alphabet-gutter {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.alphabet-gutter span {
+    font-size: 0.6rem;
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+}
+
+.alphabet-gutter span.active {
+    color: var(--color-text);
 }

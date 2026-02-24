@@ -1,68 +1,83 @@
-.history-section h3 {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text);
-    margin-bottom: var(--spacing-md);
-}
-
 .history-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.history-item {
-    background-color: var(--color-surface);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-md);
-}
-
-.history-date {
-    display: flex;
-    align-items: baseline;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--spacing-sm);
 }
 
-.history-date .day {
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text);
-}
-
-.history-date .date {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-}
-
-.history-sets {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.set-row {
+.history-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm);
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.set-reps {
-    color: var(--color-text);
-    width: 50px;
+.history-card:active {
+    background-color: var(--color-surface-hover);
 }
 
-.set-weight {
+.history-date-box {
+    width: 48px;
+    height: 48px;
+    background-color: #1a1a1a;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+}
+
+.history-date-box .month {
+    font-size: 0.55rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.history-date-box .day {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+}
+
+.history-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.history-main {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.history-weight {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+}
+
+.pr-badge-small {
+    background-color: var(--color-primary);
+    color: black;
+    font-size: 0.55rem;
+    font-weight: var(--font-weight-bold);
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+.history-stats {
+    font-size: 0.7rem;
     color: var(--color-text-muted);
 }
 
-.badge-pr {
-    background-color: rgba(251, 191, 36, 0.2);
-    color: #fbbf24;
-    font-size: 0.65rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: var(--font-weight-bold);
+.history-chevron {
+    color: var(--color-text-muted);
+    opacity: 0.5;
 }

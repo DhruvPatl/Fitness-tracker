@@ -1,0 +1,104 @@
+.auth-page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.auth-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.auth-brand {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.brand-logo {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-primary-glow);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.auth-brand h1 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+}
+
+.auth-brand p {
+    color: var(--color-text-muted);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.auth-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: var(--color-text-muted);
+}
+
+.auth-input-group input {
+    width: 100%;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 14px 14px 14px 48px;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.auth-input-group input:focus {
+    border-color: var(--color-primary);
+    background-color: #0c0c0c;
+}
+
+.auth-submit-btn {
+    background-color: var(--color-primary);
+    color: black;
+    font-weight: var(--font-weight-bold);
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-lg);
+    box-shadow: 0 0 20px var(--color-primary-glow);
+    transition: transform 0.2s;
+}
+
+.auth-submit-btn:disabled {
+    opacity: 0.5;
+}
+
+.auth-toggle {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.auth-toggle button {
+    background: transparent;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    margin-left: 8px;
+}

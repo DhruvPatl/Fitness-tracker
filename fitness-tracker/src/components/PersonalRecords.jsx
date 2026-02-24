@@ -1,27 +1,37 @@
 import { Trophy } from 'lucide-react';
+import { useWorkoutHistory } from '../hooks/useWorkoutHistory';
 import '../styles/PersonalRecords.css';
 
-const records = [
-    { exercise: 'Bench Press', weight: '100 kg' },
-    { exercise: 'Squat', weight: '140 kg' },
-    { exercise: 'Deadlift', weight: '180 kg' },
-];
+import { Dumbbell, Calendar } from 'lucide-react';
 
 const PersonalRecords = () => {
+    const { getPersonalRecords } = useWorkoutHistory();
+    const records = getPersonalRecords();
+
     return (
-        <div className="pr-card">
-            <div className="card-header">
-                <h3>Personal Records</h3>
-                <Trophy size={20} color="#fbbf24" />
-            </div>
-            <ul className="pr-list">
-                {records.map((record, index) => (
-                    <li key={index} className="pr-item">
-                        <span className="exercise-name">{record.exercise}</span>
-                        <span className="exercise-weight">{record.weight}</span>
-                    </li>
-                ))}
-            </ul>
+        <div className="pr-grid">
+            {records.length === 0 ? (
+                <div className="pr-item empty">No records yet. Go lift!</div>
+            ) : (
+                records.map((record, index) => (
+                    <div key={index} className="pr-card">
+                        <div className="pr-icon-wrapper">
+                            <Dumbbell size={20} className="pr-icon" />
+                        </div>
+                        <div className="pr-info">
+                            <div className="pr-value-row">
+                                <span className="pr-weight">{record.weight}</span>
+                                <span className="pr-unit">lbs</span>
+                            </div>
+                            <span className="pr-exercise">{record.exercise}</span>
+                            <div className="pr-date">
+                                <Calendar size={12} />
+                                <span>{record.date || '2 days ago'}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            )}
         </div>
     );
 };

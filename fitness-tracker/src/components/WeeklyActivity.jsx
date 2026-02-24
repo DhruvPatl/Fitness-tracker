@@ -1,39 +1,36 @@
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { useWorkoutHistory } from '../hooks/useWorkoutHistory';
 import '../styles/WeeklyActivity.css';
 
-const data = [
-    { day: 'M', workouts: 1 },
-    { day: 'T', workouts: 0 },
-    { day: 'W', workouts: 1 },
-    { day: 'T', workouts: 1 },
-    { day: 'F', workouts: 0 },
-    { day: 'S', workouts: 1 },
-    { day: 'S', workouts: 0 },
-];
-
 const WeeklyActivity = () => {
+    const { getWeeklyStats } = useWorkoutHistory();
+    const data = getWeeklyStats();
+
+    // Calculate total workouts for the week
+    const totalWorkouts = data.reduce((acc, curr) => acc + curr.workouts, 0);
+
     return (
         <div className="weekly-activity-card">
             <div className="card-header">
                 <h3>Weekly Activity</h3>
-                <span className="subtitle">4 Workouts</span>
+                <span className="subtitle">{totalWorkouts} Workouts</span>
             </div>
             <div className="chart-container">
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data}>
+                    <BarChart data={data} barGap={4}>
                         <XAxis
                             dataKey="day"
                             axisLine={false}
                             tickLine={false}
-                            tick={{ fill: '#94a3b8', fontSize: 12 }}
+                            tick={{ fill: '#888888', fontSize: 10, fontWeight: 500 }}
                         />
                         <Tooltip
-                            cursor={{ fill: 'transparent' }}
-                            contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '8px', color: '#fff' }}
+                            cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+                            contentStyle={{ backgroundColor: '#121212', border: '1px solid #222', borderRadius: '8px', color: '#fff' }}
                         />
-                        <Bar dataKey="workouts" radius={[4, 4, 4, 4]}>
+                        <Bar dataKey="workouts" radius={[10, 10, 10, 10]} barSize={12}>
                             {data.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.workouts > 0 ? '#6366f1' : '#334155'} />
+                                <Cell key={`cell-${index}`} fill={entry.workouts > 0 ? 'var(--color-primary)' : '#1a1a1a'} />
                             ))}
                         </Bar>
                     </BarChart>

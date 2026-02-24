@@ -1,0 +1,112 @@
+.plans-page {
+    padding-bottom: 20px;
+}
+
+.plans-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.plans-header h2 {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+.add-plan-btn {
+    color: var(--color-primary);
+    background: transparent;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plans-container {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+}
+
+.plans-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.plan-card:last-child {
+    border-bottom: none;
+}
+
+.plan-card:active {
+    background-color: var(--color-surface-hover);
+}
+
+.plan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.plan-name {
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+}
+
+.plan-description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.plan-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.delete-plan-btn {
+    background: transparent;
+    color: var(--color-text-muted);
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    opacity: 0;
+}
+
+.plan-card:hover .delete-plan-btn {
+    opacity: 1;
+}
+
+.delete-plan-btn:hover {
+    color: #ef4444;
+    /* Error red */
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.empty-plans {
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.plan-chevron {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}

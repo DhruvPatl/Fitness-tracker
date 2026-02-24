@@ -1,46 +1,81 @@
 .quick-start-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
+    position: relative;
 }
 
-.quick-start-btn {
+.session-card {
     width: 100%;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: white;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
-    transition: transform 0.2s;
+    gap: var(--spacing-md);
+    text-align: left;
+    transition: background-color 0.2s;
 }
 
-.quick-start-btn:active {
-    transform: scale(0.98);
+.session-card:active {
+    background-color: var(--color-surface-hover);
 }
 
-.icon-wrapper {
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 48px;
-    height: 48px;
+.session-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    margin-right: var(--spacing-md);
+    color: var(--color-primary);
 }
 
-.text-wrapper {
+.session-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
-.btn-title {
-    font-size: var(--font-size-lg);
+.session-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 2px;
+}
+
+.session-stats {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.dot {
+    opacity: 0.5;
+}
+
+.chevron {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}
+
+.fab-start {
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    background-color: var(--color-primary);
+    color: black;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.75rem;
     font-weight: var(--font-weight-bold);
-    line-height: 1.2;
-}
-
-.btn-subtitle {
-    font-size: var(--font-size-sm);
-    opacity: 0.9;
+    box-shadow: 0 0 20px var(--color-primary-glow);
+    z-index: 10;
 }

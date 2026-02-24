@@ -5,33 +5,32 @@ import '../styles/WorkoutExercise.css';
 const WorkoutExercise = ({
     index,
     exercise,
+    totalExercises,
+    weightUnit,
     onAddSet,
     onUpdateSet,
     onToggleSetComplete,
     onRemoveSet
 }) => {
     return (
-        <div className="workout-exercise-card">
-            <div className="exercise-header">
-                <h3 className="exercise-title">{exercise.name}</h3>
-                <button className="btn-options">
-                    <MoreHorizontal size={20} />
-                </button>
+        <div className="workout-exercise-container">
+            <div className="exercise-header-row">
+                <div className="exercise-title-info">
+                    <h3 className="exercise-title-active">{exercise.name}</h3>
+                    <p className="exercise-previous">Previous: 225 lbs x 8 reps</p>
+                </div>
+                <div className="exercise-progress">
+                    <span>{index + 1} of {totalExercises}</span>
+                </div>
             </div>
 
-            <div className="sets-header">
-                <span>Set</span>
-                <span>kg</span>
-                <span>Reps</span>
-                <span>Done</span>
-            </div>
-
-            <div className="sets-list">
+            <div className="sets-list-active">
                 {exercise.sets.map((set, setIndex) => (
                     <SetRow
                         key={set.id}
                         setIndex={setIndex}
                         set={set}
+                        weightUnit={weightUnit}
                         onUpdate={(field, value) => onUpdateSet(index, setIndex, field, value)}
                         onToggleComplete={() => onToggleSetComplete(index, setIndex)}
                         onRemove={() => onRemoveSet(index, setIndex)}
@@ -39,12 +38,13 @@ const WorkoutExercise = ({
                 ))}
             </div>
 
-            <button className="btn-add-set" onClick={() => onAddSet(index)}>
+            <button className="btn-add-set-active" onClick={() => onAddSet(index)}>
                 <Plus size={16} />
                 <span>Add Set</span>
             </button>
         </div>
     );
 };
+
 
 export default WorkoutExercise;

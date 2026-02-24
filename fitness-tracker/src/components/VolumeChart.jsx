@@ -3,33 +3,28 @@ import '../styles/VolumeChart.css';
 
 const VolumeChart = ({ data }) => {
     return (
-        <div className="chart-card">
-            <h3>Volume Progress</h3>
+        <div className="progress-chart-card">
             <div className="chart-container">
                 <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={data}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+                    <LineChart data={data} margin={{ top: 20, right: 10, left: 10, bottom: 0 }}>
                         <XAxis
                             dataKey="date"
-                            tick={{ fill: '#94a3b8', fontSize: 12 }}
+                            tick={{ fill: '#555', fontSize: 10, fontWeight: 500 }}
                             axisLine={false}
                             tickLine={false}
                             dy={10}
                         />
-                        <YAxis
-                            hide={true}
-                        />
                         <Tooltip
-                            contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '8px', color: '#fff' }}
-                            itemStyle={{ color: '#fff' }}
+                            contentStyle={{ backgroundColor: '#121212', border: '1px solid #222', borderRadius: '8px', color: '#fff' }}
+                            itemStyle={{ color: 'var(--color-primary)' }}
                         />
                         <Line
                             type="monotone"
                             dataKey="volume"
-                            stroke="#6366f1"
+                            stroke="var(--color-primary)"
                             strokeWidth={3}
-                            dot={{ fill: '#6366f1', strokeWidth: 0, r: 4 }}
-                            activeDot={{ r: 6 }}
+                            dot={{ fill: 'var(--color-primary)', strokeWidth: 0, r: 4 }}
+                            activeDot={{ r: 6, stroke: '#000', strokeWidth: 2 }}
                         />
                     </LineChart>
                 </ResponsiveContainer>
